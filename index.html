@@ -1,139 +1,685 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://assets.bouyguestelecom.fr/TRILOGY/trilogy-framework@3.8.4/trilogy.css">
-    <title>Oooops, page indisponible | Bouygues Telecom</title>
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <link href="https://assets.bouyguestelecom.fr/TRILOGY/trilogy-framework@3.8.4/trilogy.css" rel="stylesheet">
+    <title>Bouygueszer</title>
 </head>
 <body>
-<main>
-    <section class="section is-medium hero has-pattern-dark has-text-white">
-        <div class="container is-fluid">
-            <p class="text has-text-centered">
-                <span class="icon is-huge">
-                  <i class="tri-question-circle" aria-hidden="true"></i>
-                </span>
-            </p>
-            <h1 class="headline is-level-1 has-text-white has-text-centered">404</h1>
-            <h2 class="title is-level-1 has-text-centered">Cette page est introuvable</h2>
-            <h3 class="title is-level-3 has-text-centered">
-                Il est possible qu'elle ait été supprimée, ou déplacée.<br>
-                Pas de panique, on vous aide à retrouver votre chemin.
-            </h3>
+<!-- header light -->
+<style>--colorPrimary: #CC4E0A
+
+;
+--colorSecondary: #0C7B91
+
+;
+--colorTertiary: #25465F
+
+;
+--colorWhite: #fff
+
+;
+--colorGreyLight: #E9E9E9
+
+;
+#skip-links:focus-within {
+    position: static;
+}
+
+#skip-links {
+    padding: 2px;
+    position: absolute;
+    left: -9999px;
+}
+
+[data-searchbar-close] {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    width: auto !important;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+    [data-searchbar-close] {
+        display: none;
+    }
+}
+
+[data-column-search-mobile="true"] {
+    width: auto !important;
+}
+
+[data-columns-searchbar-results] {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        width: 0 !important;
+        height: 0 !important;
+    }
+}
+
+[data-searchbar-render-results] {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 20px;
+}
+
+[data-searchbar-render-input] {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: block;
+}
+
+@media screen and (min-width: 768px) {
+    #search-recentSearch {
+        margin-bottom: 12px;
+    }
+}
+
+[data-search-bar="input-desktop"] > div {
+    margin-bottom: 0px !important;
+}
+
+[data-searchbar-render] {
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    background-color: var(--colorWhite);
+    z-index: 9999;
+}
+
+@media screen and (min-width: 1024px) {
+    [data-search-bar="input-mobile"] {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    [data-search-bar="input-desktop"] {
+        display: none;
+    }
+
+    [data-searchbar-render] {
+        top: 0;
+        height: 100vh;
+        overflow-y: auto;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    [data-searchbar-render] {
+        margin-top: 54px;
+        overflow-y: hidden;
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+
+    [data-search-bar="input-tablet"] [data-searchbar-render] {
+        margin-top: 50px;
+        padding-top: 0;
+    }
+
+    [data-searchbar-render-input] {
+        display: none;
+    }
+
+    [data-search-bar="input-tablet"] [data-searchbar-render-input] {
+        display: block;
+    }
+}
+
+[data-roles="header"] {
+    z-index: 1000;
+    border-bottom: 1px solid var(--colorGreyLight);
+    background-color: var(--colorWhite);
+}
+
+[data-roles="supMenu"] {
+    background-color: var(--colorWhite);
+    height: 50px;
+    border-bottom: 1px solid var(--colorGreyLight);
+}
+
+[data-roles="logo-search"] {
+    gap: 30px;
+}
+
+div[data-roles="links"] {
+    font-size: 14px;
+    height: inherit;
+    display: flex;
+    flex-basis: 0 !important;
+    flex-grow: 1 !important;
+    flex-shrink: 1 !important;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+div[data-roles="links"] > a,
+div[data-roles="links"] summary,
+div[data-roles="links"] [data-roles="client-popin"] a {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    cursor: pointer;
+    min-width: auto;
+    line-height: 1;
+    align-items: center;
+    white-space: nowrap;
+    padding: 0 4px;
+}
+
+div[data-roles="links"] a {
+    color: var(--colorTertiary);
+}
+
+div[data-roles="links"] a:hover {
+    color: var(--colorSecondary);
+}
+
+div[data-roles="links"] a:hover [class^="icon"] > * {
+    background-color: var(--colorSecondary);
+}
+
+[data-roles="header"] [class^="accordions"] {
+    background-color: var(--colorWhite);
+    align-items: center;
+}
+
+[data-roles="header"] [class^="accordions"] > [class^="accordion"] {
+    max-height: max-content;
+    font-size: 14px;
+    background-color: var(--colorWhite);
+    border: none;
+    margin: 0px;
+    padding: 2px;
+    border-radius: 0px !important;
+}
+
+[data-roles="header"]
+[class^="accordions"]
+> [class^="accordion"]:hover:not(.is-disabled),
+[data-roles="header"]
+[class^="accordions"]
+> [class^="accordion"]:focus:not(.is-disabled) {
+    border: none !important;
+    padding: 2px;
+}
+
+[data-roles="header"] [class^="accordions"] [class^="accordion-header"] {
+    padding: 0px !important;
+}
+
+[data-roles="header"]
+[class^="accordions"]
+[class^="accordion-header"]
+> [data-roles="menuHeader"] {
+    margin: 15px 0 15px 15px;
+}
+
+[data-roles="aright"] {
+    margin-left: auto !important;
+    padding: 0;
+}
+
+[data-roles="header"]
+[class^="accordions"]
+[class^="accordion"]:hover:not([class~="is-disabled"])
+[class^="accordion-header"] {
+    padding: 0px;
+}
+
+[data-roles="searchbar"] {
+    flex: auto;
+}
+
+[data-roles="searchbar"] [class^="field"]:not(:last-child) {
+    margin-bottom: 0px;
+}
+
+[data-roles="results"] {
+    position: absolute;
+    min-width: 592px;
+    margin-top: 0px;
+    display: none;
+    z-index: 1001;
+}
+
+[data-roles="searchbar"]:hover [data-roles="results"] {
+    display: block;
+}
+
+[data-roles="searchbar"] input {
+    border-radius: 35px;
+    background-color: transparent;
+    height: 40px;
+}
+
+[data-roles="section-links"] a {
+    padding: 5px 0 5px 30px !important;
+}
+
+[data-roles="section-links"] [class^="sticker"] {
+    height: min-content !important;
+}
+
+[data-roles="header"] img[data-roles="logo"] {
+    height: 50px;
+    display: block;
+    margin-left: 10px;
+}
+
+[data-roles="menu-separation"] {
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+    [data-roles="supMenu"] {
+        height: 70px;
+    }
+}
+
+@media screen and (min-width: 1240px) {
+    [data-roles="logo-search"] > a {
+        min-width: 125px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    [data-roles="logo-search"] {
+        margin-left: 30px !important;
+    }
+
+    div[data-roles="links"] [data-roles="client"] {
+        position: static;
+        display: flex;
+        align-items: center;
+        background-color: var(--colorTertiary);
+        color: var(--colorWhite) !important;
+        height: 40px;
+        border-radius: 20px;
+        margin: 0 15px;
+        padding: 0 15px;
+        max-width: 170px;
+    }
+
+    div[data-roles="links"] [data-roles="client"]:hover {
+        opacity: 90%;
+    }
+
+    div[data-roles="links"] [data-roles="client"] [class^="icon"] > *,
+    div[data-roles="links"] a[data-roles="client"]:hover [class^="icon"] > * {
+        background-color: var(--colorWhite);
+    }
+
+    div[data-roles="links"] [data-roles="client"] {
+        list-style: none;
+    }
+
+    details:has([data-roles="client-popin"]) ::-webkit-details-marker {
+        display: none;
+    }
+
+    div[data-roles="links"] [data-roles="client-popin"] {
+        position: absolute;
+        margin-top: -10px;
+        right: 0;
+        min-width: 180px;
+        z-index: 1001;
+        padding-top: 16px;
+    }
+
+    div[data-roles="links"] [data-roles="client"] [data-roles="client-popin"] [class^="icon"] > * {
+        background-color: currentColor;
+    }
+
+    [data-roles="header"] [class^="accordions"] {
+        width: fit-content;
+        margin: 0 auto;
+        height: fit-content;
+        overflow: hidden;
+    }
+
+    [data-roles="header"] [class^="accordion-body"][data-open="true"],
+    [data-roles="header"] [data-header-menu]:hover [class^="accordion-body"] {
+        padding: 0px 40px !important;
+        padding-top: 0px !important;
+        display: block !important;
+    }
+
+    [data-roles="header"]
+    [class^="accordions"]
+    > [class^="accordion"]:hover
+    > [class^="accordion-header"]
+    > [data-roles="menuHeader"] {
+        color: var(--colorSecondary);
+    }
+
+    [data-roles="header"]
+    [class^="accordions"]
+    > [class^="accordion"]:hover
+    > [class^="accordion-header"]
+    > [data-roles="menuHeader"]
+    [class^="icon"]
+    > * {
+        background-color: var(--colorSecondary);
+    }
+
+    [data-roles="header"]
+    [class^="accordions"]
+    > [class^="accordion"]:hover
+    > [class^="accordion-header"] {
+        font-weight: normal;
+        border-bottom: 2px solid var(--colorSecondary);
+    }
+
+    [data-roles="header"]
+    [class^="accordions"]
+    > [class^="accordion"]:hover
+    [class^="accordion-header"][class*="has-text-primary"] {
+        border-bottom-color: var(--colorPrimary) !important;
+    }
+
+    [data-roles="header"]
+    [class^="accordion-header"]
+    [class^="accordions"]
+    > [class^="accordion-header"] {
+        border-bottom: 3px solid var(--colorWhite);
+    }
+
+    [data-roles="header"]
+    [class^="accordions"]
+    > [class^="accordion"]
+    > [class^="accordion-header"]
+    [data-roles="menuHeader"][class*="icon-and-text"] {
+        margin: 10px !important;
+    }
+
+    [data-roles="header"]
+    [class^="accordion-header"]
+    [class^="accordions"]
+    > [class^="accordion"]:hover
+    [class^="accordion-header"]:not([class~="is-disabled"])
+    [class^="accordion-body"] {
+        padding: 0px 100px;
+    }
+
+    [data-roles="header"] [class^="accordion-body"] {
+        position: absolute;
+        z-index: 1000;
+        background-color: var(--colorWhite);
+        width: 100%;
+        margin-top: 54px;
+        padding: 0px 100px;
+        left: 0;
+        right: 0;
+    }
+
+    [class^="accordion-body"] [data-roles="section"] {
+        padding: 20px;
+    }
+
+    [data-roles="header"]
+    [class^="accordions"]
+    [class^="accordion-header"]
+    > [data-roles="menuHeader"] {
+        margin-right: 15px;
+        color: var(--colorSecondary);
+    }
+
+    [data-roles="menu-separation"] {
+        display: block;
+        height: 25px;
+        width: 1px;
+        top: 20px;
+        background-color: var(--colorGreyLight);
+    }
+}
+
+/* Toogle Burger Menu */
+[data-roles="header"] #burgerToggle ~ [data-roles="supMenu"] label span {
+    display: none;
+}
+
+@media screen and (max-width: 1023.99px) {
+    [data-roles="header"] #burgerToggle:not(:checked) ~ [data-roles="supMenu"] label [data-roles="burgerClose"] {
+        display: flex;
+    }
+
+    [data-roles="header"] #burgerToggle:checked ~ [data-roles="supMenu"] label [data-roles="burgerOpen"] {
+        display: flex;
+    }
+}
+
+[data-roles="header"] #burgerToggle ~ [data-roles="menu"] {
+    display: none;
+}
+
+[data-roles="header"] #burgerToggle:checked ~ [data-roles="menu"] {
+    display: block;
+}
+
+</style>
+<script src="https://assets.bouyguestelecom.fr/Palpatine_Partials/statics@3.15.12/island/js/hoisted2.js"
+        type="module"></script>
+<header class="partial__9ef8c90" role="banner" data-roles="header"
+        style="--colorPrimary: #CC4E0A;--colorSecondary: #0C7B91;--colorTertiary: #25465F;--colorWhite: #fff;--colorGreyLight: #E9E9E9;">
+    <link as="style"
+          href="https://assets.bouyguestelecom.fr/TRILOGY/trilogy-framework@3.8.6/trilogy-partials-mangled.css"
+          rel="preload">
+    <link href="https://assets.bouyguestelecom.fr/TRILOGY/trilogy-framework@3.8.6/trilogy-partials-mangled.css"
+          rel="stylesheet">
+    <style>astro-island, astro-slot, astro-static-slot {
+        display: contents
+    }</style>
+    <script>(() => {
+        var e = async t => {
+            await (await t())()
+        };
+        (self.Astro || (self.Astro = {})).load = e;
+        window.dispatchEvent(new Event("astro:load"));
+    })();
+    (() => {
+        var v = Object.defineProperty;
+        var A = (c, s, a) => s in c ? v(c, s, {enumerable: !0, configurable: !0, writable: !0, value: a}) : c[s] = a;
+        var d = (c, s, a) => (A(c, typeof s != "symbol" ? s + "" : s, a), a);
+        var u;
+        {
+            let c = {
+                    0: t => m(t),
+                    1: t => a(t),
+                    2: t => new RegExp(t),
+                    3: t => new Date(t),
+                    4: t => new Map(a(t)),
+                    5: t => new Set(a(t)),
+                    6: t => BigInt(t),
+                    7: t => new URL(t),
+                    8: t => new Uint8Array(t),
+                    9: t => new Uint16Array(t),
+                    10: t => new Uint32Array(t)
+                }, s = t => {
+                    let [e, n] = t;
+                    return e in c ? c[e](n) : void 0
+                }, a = t => t.map(s),
+                m = t => typeof t != "object" || t === null ? t : Object.fromEntries(Object.entries(t).map(([e, n]) => [e, s(n)]));
+            customElements.get("astro-island") || customElements.define("astro-island", (u = class extends HTMLElement {
+                constructor() {
+                    super(...arguments);
+                    d(this, "Component");
+                    d(this, "hydrator");
+                    d(this, "hydrate", async () => {
+                        var f;
+                        if (!this.hydrator || !this.isConnected) return;
+                        let e = (f = this.parentElement) == null ? void 0 : f.closest("astro-island[ssr]");
+                        if (e) {
+                            e.addEventListener("astro:hydrate", this.hydrate, {once: !0});
+                            return
+                        }
+                        let n = this.querySelectorAll("astro-slot"), r = {},
+                            l = this.querySelectorAll("template[data-astro-template]");
+                        for (let o of l) {
+                            let i = o.closest(this.tagName);
+                            i != null && i.isSameNode(this) && (r[o.getAttribute("data-astro-template") || "default"] = o.innerHTML, o.remove())
+                        }
+                        for (let o of n) {
+                            let i = o.closest(this.tagName);
+                            i != null && i.isSameNode(this) && (r[o.getAttribute("name") || "default"] = o.innerHTML)
+                        }
+                        let h;
+                        try {
+                            h = this.hasAttribute("props") ? m(JSON.parse(this.getAttribute("props"))) : {}
+                        } catch (o) {
+                            let i = this.getAttribute("component-url") || "<unknown>",
+                                b = this.getAttribute("component-export");
+                            throw b && (i += ` (export ${b})`), console.error(`[hydrate] Error parsing props for component ${i}`, this.getAttribute("props"), o), o
+                        }
+                        let p;
+                        await this.hydrator(this)(this.Component, h, r, {client: this.getAttribute("client")}), this.removeAttribute("ssr"), this.dispatchEvent(new CustomEvent("astro:hydrate"))
+                    });
+                    d(this, "unmount", () => {
+                        this.isConnected || this.dispatchEvent(new CustomEvent("astro:unmount"))
+                    })
+                }
+
+                disconnectedCallback() {
+                    document.removeEventListener("astro:after-swap", this.unmount), document.addEventListener("astro:after-swap", this.unmount, {once: !0})
+                }
+
+                connectedCallback() {
+                    if (!this.hasAttribute("await-children") || document.readyState === "interactive" || document.readyState === "complete") this.childrenConnectedCallback(); else {
+                        let e = () => {
+                            document.removeEventListener("DOMContentLoaded", e), n.disconnect(), this.childrenConnectedCallback()
+                        }, n = new MutationObserver(() => {
+                            var r;
+                            ((r = this.lastChild) == null ? void 0 : r.nodeType) === Node.COMMENT_NODE && this.lastChild.nodeValue === "astro:end" && (this.lastChild.remove(), e())
+                        });
+                        n.observe(this, {childList: !0}), document.addEventListener("DOMContentLoaded", e)
+                    }
+                }
+
+                async childrenConnectedCallback() {
+                    let e = this.getAttribute("before-hydration-url");
+                    e && await import(e), this.start()
+                }
+
+                async start() {
+                    let e = JSON.parse(this.getAttribute("opts")), n = this.getAttribute("client");
+                    if (Astro[n] === void 0) {
+                        window.addEventListener(`astro:${n}`, () => this.start(), {once: !0});
+                        return
+                    }
+                    try {
+                        await Astro[n](async () => {
+                            let r = this.getAttribute("renderer-url"), [l, {default: h}] = await Promise.all([import(this.getAttribute("component-url")), r ? import(r) : () => () => {
+                            }]), p = this.getAttribute("component-export") || "default";
+                            if (!p.includes(".")) this.Component = l[p]; else {
+                                this.Component = l;
+                                for (let y of p.split(".")) this.Component = this.Component[y]
+                            }
+                            return this.hydrator = h, this.hydrate
+                        }, e, this)
+                    } catch (r) {
+                        console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`, r)
+                    }
+                }
+
+                attributeChangedCallback() {
+                    this.hydrate()
+                }
+            }, d(u, "observedAttributes", ["props"]), u))
+        }
+    })();</script>
+    <astro-island client="load" component-export="default"
+                  component-url="https://assets.bouyguestelecom.fr/Palpatine_Partials/statics@3.15.12/island/js/config.js"
+                  opts="{&quot;name&quot;:&quot;Config&quot;,&quot;value&quot;:true}"
+                  prefix="r1"
+                  props="{&quot;baseUrl&quot;:[0,&quot;https://www.bouyguestelecom.fr&quot;],&quot;version&quot;:[0,&quot;3.15.12&quot;]}"
+                  renderer-url="https://assets.bouyguestelecom.fr/Palpatine_Partials/statics@3.15.12/island/js/client.js" ssr=""
+                  uid="1N8xph"></astro-island>
+    <astro-island await-children="" client="load"
+                  component-export="AppHeader"
+                  component-url="https://assets.bouyguestelecom.fr/Palpatine_Partials/statics@3.15.12/island/js/App3.js"
+                  opts="{&quot;name&quot;:&quot;AppHeader&quot;,&quot;value&quot;:true}"
+                  prefix="r0"
+                  props="{&quot;config&quot;:[0,{&quot;links&quot;:[1,[]],&quot;searchbar&quot;:[0,{&quot;active&quot;:[0,false],&quot;title&quot;:[0,&quot;rechercher&quot;]}]}],&quot;urlConfig&quot;:[0,&quot;light&quot;]}" renderer-url="https://assets.bouyguestelecom.fr/Palpatine_Partials/statics@3.15.12/island/js/client.js" ssr=""
+                  uid="1b7Vpw">
+        <div id="skip-links"><a class="button__9ef8c90 is-loaded__9ef8c90 is-tertiary__9ef8c90"
+                                href="#contenu-principal" tabindex="1">Accéder au contenu</a><a
+                class="button__9ef8c90 is-loaded__9ef8c90 is-tertiary__9ef8c90" href="#plan-du-site" tabindex="2">Accéder
+            au plan du site</a></div>
+        <input data-roles="burgerToggle" id="burgerToggle" style="display:none" type="checkbox"/>
+        <div class="columns__9ef8c90 is-mobile__9ef8c90 is-gapless__9ef8c90 is-aligned-center__9ef8c90 is-marginless__9ef8c90"
+             data-roles="supMenu">
+            <div class="column__9ef8c90 is-2-mobile__9ef8c90 is-4-desktop__9ef8c90 is-vcentered__9ef8c90 is-flex-desktop__9ef8c90"
+                 data-roles="logo-search"><a class="text__9ef8c90 is-loaded__9ef8c90" data-tc-action="Clic_redirection"
+                                             data-tc-categorie="Header::navigation::Niv1" data-tc-clic="Logo_Bouygues_Telecom"
+                                             href="https://www.bouyguestelecom.fr"
+                                             tabindex="3" title="Bouygues Telecom">
+                <picture>
+                    <source media="(max-width:1240px)"
+                            srcSet="https://www.bouyguestelecom.fr/static/wbm/assets/hub/img/logo-bouygues-telecom-mobileV2.svg"
+                            type="image/svg+xml" width="50"/>
+                    <source media="(min-width:1240px)"
+                            srcSet="https://www.bouyguestelecom.fr/static/wbm/assets/hub/img/logo-bouygues-telecom.svg"
+                            type="image/svg+xml" width="125"/>
+                    <img alt="Bouygues Telecom" data-roles="logo" height="50"
+                         src="https://www.bouyguestelecom.fr/static/wbm/assets/hub/img/logo-bouygues-telecom.svg"/>
+                </picture>
+            </a></div>
+            <div class="column__9ef8c90 is-7__9ef8c90 is-10-mobile__9ef8c90" data-roles="links"></div>
         </div>
-    </section>
-    <section class="section is-medium has-background-grey-lighter">
-        <div class="container is-fluid">
-            <div class="columns is-desktop">
-                <div class="column is-5">
-                    <h2 class="headline is-level-2">De quoi avez-vous besoin ?</h2>
-                    <p class="text">
-                        Téléphone, forfait mobile, abonnement internet, assistance...
-                        <br class="is-hidden-mobile is-hidden-tablet-only">
-                        On a forcément quelque chose pour vous.
-                    </p>
-                </div>
-                <div class="column is-7-desktop">
-                    <div class="columns is-desktop is-multiline">
-                        <div class="column is-6-desktop">
-                            <div class="box is-fullheight">
-                                <div class="box-content has-text-left">
-                                    <div class="rows">
-                                        <div class="row">
-                                            <p class="text has-text-weight-bold is-level-2">Forfaits mobile</p>
-                                            <p class="text is-level-2 is-marginless">
-                                                Avec ou sans smartphone, promis, on a le forfait qu'il vous faut !
-                                            </p>
-                                        </div>
-                                        <div class="row">
-                                            <a href="https://www.bouyguestelecom.fr/forfaits-mobiles" class="link">
-                                                Découvrir nos offres
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column is-6-desktop">
-                            <div class="box is-fullheight">
-                                <div class="box-content has-text-left">
-                                    <div class="rows">
-                                        <div class="row">
-                                            <p class="text has-text-weight-bold is-level-2">Box internet</p>
-                                            <p class="text is-level-2 is-marginless"> Fibre, ADSL, 4G box : à chacun sa
-                                                solution.</p>
-                                        </div>
-                                        <div class="row is-narrow">
-                                            <a href="https://www.bouyguestelecom.fr/offres-internet" class="link">
-                                                Tester votre éligibilité
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column is-6-desktop">
-                            <div class="box is-fullheight">
-                                <div class="box-content has-text-left">
-                                    <div class="rows">
-                                        <div class="row">
-                                            <p class="text has-text-weight-bold is-level-2">Assistance</p>
-                                            <p class="text is-level-2 is-marginless">
-                                                Besoin de nous contacter pour une question technique ou commerciale ?
-                                            </p>
-                                        </div>
-                                        <div class="row is-narrow">
-                                            <a href="https://www.assistance.bouyguestelecom.fr/s/" class="link">
-                                                Obtenir une réponse
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column is-6-desktop">
-                            <div class="box is-fullheight">
-                                <div class="box-content has-text-left">
-                                    <div class="rows">
-                                        <div class="row">
-                                            <p class="text has-text-weight-bold is-level-2">Espace client</p>
-                                            <p class="text is-level-2 is-marginless">
-                                                Suivre votre conso, accéder à votre facture, modifier votre offre...
-                                            </p>
-                                        </div>
-                                        <div class="row is-narrow">
-                                            <a href="https://www.bouyguestelecom.fr/mon-compte/dashboard" class="link">
-                                                Se connecter
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column is-12">
-                            <div class="notification is-small has-body is-marginless">
-                                <div class="icon">
-                                    <i class="tri-lightbulb-on"></i>
-                                </div>
-                                <div class="body">
-                                    <p class="text is-level-2 is-marginless">
-                                        Vous pouvez aussi revenir sur
-                                        <a href="https://www.bouyguestelecom.fr/" class="has-text-weight-bold">la page
-                                            d'accueil</a>
-                                        ou utiliser le menu situé en haut de page
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+        <div id="contenu-principal"></div><!--astro:end--></astro-island>
+    <header-features><span></span></header-features>
+</header>
+<!-- /header light -->
+<!-- CONTENU -->
+<main class="main-content is-fullwidth has-background-white" role="main" id="contenu-principal">
+    <div class="section has-background-grey-lighter">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-6-widescreen">
+                    <div class="box has-text-centered">
+                        <h3 class="headline is-level-3">Notre site est sur pause</h3>
+                        <p class="text">Afin de vous offrir les meilleures conditons de navigation, le site est actuellement en maintenance.</p>
+                        <p class="title is-level-3">Promis, il revient vite !</p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <section class="section has-background-white" style="padding-top: 55px; padding-bottom: 55px">
+        <h3 class="headline is-level-4 has-text-centered">En attendant, nous vous accueillerons avec plaisir</h3>
+        <div class="columns has-text-centered" style="margin-top: 32px;">
+            <div class="column"></div>
+            <div class="column is-narrow">
+            <span class="icon-and-text">
+                <span class="icon is-small"><i class="tri-store" aria-hidden="true"></i></span>
+                <span class="text is-level-1 is-marginless" style="font-weight:bold;">Dans nos magasins</span>
+            </span>
+            </div>
+            <div class="column is-1"></div>
+            <div class="column is-narrow">
+            <span class="icon-and-text">
+                <a href="https://www.facebook.com/bouyguestelecom">
+                    <span class="icon is-small" style="margin-right: 0"><i class="tri-facebook" aria-hidden="true"></i></span>
+                </a>
+                <a href="https://twitter.com/bouyguestelecom">
+                    <span class="icon is-small" style="margin-left: 0"><i class="tri-x" aria-hidden="true"></i></span>
+                </a>
+                <span class="text is-level-1 is-marginless" style="font-weight:bold;">Sur nos réseaux sociaux</span>
+            </span>
+            </div>
+            <div class="column"></div>
+        </div>
     </section>
 </main>
+<!-- /CONTENU -->
 
 </body>
 </html>
