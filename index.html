@@ -7,6 +7,30 @@
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <link href="https://assets.bouyguestelecom.fr/TRILOGY/trilogy-framework@3.9/trilogy.css" rel="stylesheet">
     <title>Oooops, page indisponible | Bouygues Telecom<</title>
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #contenu-principal.main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #contenu-principal.main-content > .section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #contenu-principal.main-content > .section > .container {
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
 <!-- header light -->
@@ -148,6 +172,12 @@
 
 [data-roles="logo-search"] {
     gap: 30px;
+}
+
+/* Le logo est réinjecté par le composant AppHeader au chargement */
+[data-roles="header"] [data-roles="logo-search"] a,
+[data-roles="header"] img[data-roles="logo"] {
+    display: none !important;
 }
 
 div[data-roles="links"] {
@@ -617,21 +647,7 @@ div[data-roles="links"] a:hover [class^="icon"] > * {
         <div class="columns__9ef8c90 is-mobile__9ef8c90 is-gapless__9ef8c90 is-aligned-center__9ef8c90 is-marginless__9ef8c90"
              data-roles="supMenu">
             <div class="column__9ef8c90 is-2-mobile__9ef8c90 is-4-desktop__9ef8c90 is-vcentered__9ef8c90 is-flex-desktop__9ef8c90"
-                 data-roles="logo-search"><a class="text__9ef8c90 is-loaded__9ef8c90" data-tc-action="Clic_redirection"
-                                             data-tc-categorie="Header::navigation::Niv1" data-tc-clic="Logo_Bouygues_Telecom"
-                                             href="https://www.bouyguestelecom.fr"
-                                             tabindex="3" title="Bouygues Telecom">
-                <picture>
-                    <source media="(max-width:1240px)"
-                            srcSet="https://www.bouyguestelecom.fr/static/wbm/assets/hub/img/logo-bouygues-telecom-mobileV2.svg"
-                            type="image/svg+xml" width="50"/>
-                    <source media="(min-width:1240px)"
-                            srcSet="https://www.bouyguestelecom.fr/static/wbm/assets/hub/img/logo-bouygues-telecom.svg"
-                            type="image/svg+xml" width="125"/>
-                    <img alt="Bouygues Telecom" data-roles="logo" height="50"
-                         src="https://www.bouyguestelecom.fr/static/wbm/assets/hub/img/logo-bouygues-telecom.svg"/>
-                </picture>
-            </a></div>
+                 data-roles="logo-search"></div>
             <div class="column__9ef8c90 is-7__9ef8c90 is-10-mobile__9ef8c90" data-roles="links"></div>
         </div>
         <div id="contenu-principal"></div><!--astro:end--></astro-island>
@@ -645,39 +661,13 @@ div[data-roles="links"] a:hover [class^="icon"] > * {
             <div class="columns is-centered">
                 <div class="column is-6-widescreen">
                     <div class="box has-text-centered">
-                        <h3 class="headline is-level-3">Notre site est sur pause</h3>
-                        <p class="text">Afin de vous offrir les meilleures conditons de navigation, le site est actuellement en maintenance.</p>
-                        <p class="title is-level-3">Promis, il revient vite !</p>
+                        <h3 class="headline is-level-3">Repellendus voluptates</h3>
+                        <p class="text">Sit occaecat nam proident nostrud, a’earum a molestiae eveniet laborum sit necessitatibus proident, nisi a’deleniti eos blanditiis. Occaecat Facilis sapiente velit pariatur. Cum fugiat mollitia voluptatibus consectetur. A’omnis anim dolores nam ad irure do ut cillum.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <section class="section has-background-white" style="padding-top: 55px; padding-bottom: 55px">
-        <h3 class="headline is-level-4 has-text-centered">En attendant, nous vous accueillerons avec plaisir</h3>
-        <div class="columns has-text-centered" style="margin-top: 32px;">
-            <div class="column"></div>
-            <div class="column is-narrow">
-            <span class="icon-and-text">
-                <span class="icon is-small"><i class="tri-store" aria-hidden="true"></i></span>
-                <span class="text is-level-1 is-marginless" style="font-weight:bold;">Dans nos magasins</span>
-            </span>
-            </div>
-            <div class="column is-1"></div>
-            <div class="column is-narrow">
-            <span class="icon-and-text">
-                <a href="https://www.facebook.com/bouyguestelecom">
-                    <span class="icon is-small" style="margin-right: 0"><i class="tri-facebook" aria-hidden="true"></i></span>
-                </a>
-                <a href="https://twitter.com/bouyguestelecom">
-                    <span class="icon is-small" style="margin-left: 0"><i class="tri-x" aria-hidden="true"></i></span>
-                </a>
-                <span class="text is-level-1 is-marginless" style="font-weight:bold;">Sur nos réseaux sociaux</span>
-            </span>
-            </div>
-            <div class="column"></div>
-        </div>
-    </section>
 </main>
 <!-- /CONTENU -->
 
